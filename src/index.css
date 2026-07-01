@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+:root {
+  font-family: Pretendard, "Apple SD Gothic Neo", "Noto Sans KR", Inter, system-ui, sans-serif;
+  color: #222222;
+  background: #ffffff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; }
+* { box-sizing: border-box; }
+a { color: inherit; text-decoration: none; }
+
+.closing-section {
+  border: 0;
+  outline: 0;
+  box-shadow: none;
+  background-color: #ffffff;
+  background-image: radial-gradient(
+    ellipse 70% 70% at 88% 50%,
+    rgba(221, 243, 255, 0.65) 0%,
+    rgba(221, 243, 255, 0.32) 28%,
+    rgba(255, 255, 255, 0) 72%
+  );
+  background-repeat: no-repeat;
+}
+
+.closing-section::before,
+.closing-section::after {
+  display: none;
+  border: 0;
+  box-shadow: none;
+}
+
+@layer components {
+  .nav-link { @apply py-2 transition-colors hover:text-black; }
+  .section-shell { @apply px-5 py-24 sm:px-8 sm:py-32; }
+  .section-inner { @apply mx-auto max-w-6xl; }
+  .section-heading { @apply max-w-3xl; }
+  .section-heading h2 { @apply mt-4 text-4xl font-semibold tracking-[-0.045em] sm:text-6xl; }
+  .section-heading > p:last-child { @apply mt-6 max-w-2xl text-base leading-8 text-black/55 sm:text-lg; }
+  .eyebrow { @apply text-[11px] font-semibold uppercase tracking-[0.22em] text-black/35 sm:text-xs; }
+  .button { @apply inline-flex items-center justify-center gap-5 rounded-full px-5 py-3.5 text-sm font-semibold transition duration-300; }
+  .button-primary { @apply bg-[#222222] text-white hover:-translate-y-0.5 hover:bg-black hover:shadow-lg; }
+  .button-secondary { @apply border border-black/10 bg-white/70 hover:-translate-y-0.5 hover:bg-white; }
+  .slide-card { @apply relative aspect-[16/9] overflow-hidden rounded-2xl border border-black/[0.06] bg-white shadow-[0_14px_45px_rgba(30,50,60,0.07)] sm:rounded-[1.75rem]; }
+  .slide-card img { @apply block size-full object-contain; }
+  .contact-button { @apply flex items-center justify-between rounded-full border border-white/15 px-6 py-4 text-sm font-medium transition hover:border-white/35 hover:bg-white hover:text-black sm:text-base; }
+}
+
+::selection { background: #ccefff; color: #222; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; }
+}
