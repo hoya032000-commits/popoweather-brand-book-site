@@ -1,4 +1,4 @@
-const slides = Array.from({ length: 11 }, (_, index) => ({
+const slides = Array.from({ length: 12 }, (_, index) => ({
   number: String(index + 1).padStart(2, '0'),
   src: `/slides/slide-${String(index + 1).padStart(2, '0')}.png`,
 }))
@@ -51,7 +51,7 @@ function App() {
               {slides.map((slide) => (
                 <figure key={slide.number}>
                   <figcaption className="mb-3 flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-black/40 sm:mb-4 sm:text-xs">
-                    Page {slide.number} / 11 <span className="h-px flex-1 bg-black/10" />
+                    Page {slide.number} / 12 <span className="h-px flex-1 bg-black/10" />
                   </figcaption>
                   <div className="slide-card">
                     <img
@@ -96,7 +96,6 @@ function App() {
                 <div className="flex flex-col gap-3">
                   <a className="contact-button" href="mailto:popoweather@naver.com">이메일 보내기 <span>↗</span></a>
                   <a className="contact-button" href="https://instagram.com/popoweather" target="_blank" rel="noreferrer">인스타그램 보기 <span>↗</span></a>
-                  <a className="contact-button" href="/popoweather-brand-deck.pdf" download>PDF 다운로드 <span>↓</span></a>
                 </div>
               </div>
             </div>
